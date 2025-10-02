@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. José Hugo Barrón Zambrano – CV</title>
+  <meta name="description" content="Currículum en línea del Dr. José Hugo Barrón Zambrano – INAOE" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#1b1b1b;
+      --muted:#5a5a5a;
+      --brand:#800020;
+      --line:#e9e9ef;
+      --chip:#f5f5f8;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1200px;margin:0 auto;padding:28px}
+
+    .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;border-bottom:2px solid var(--brand);padding-bottom:10px}
+    .logos{display:flex;gap:20px;align-items:center}
+    .logos img{height:60px;width:auto;object-fit:contain}
+
+    header{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin-bottom:16px}
+    .avatar{width:120px;height:120px;border-radius:18px;background:var(--brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:2rem}
+    h1{margin:0 0 2px 0;font-size:2rem}
+    .subtitle{margin-top:6px;color:var(--muted)}
+    .badges{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+    .badge{background:var(--chip);border:1px solid var(--line);padding:4px 10px;border-radius:999px;color:var(--muted);font-size:.85rem}
+
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+    .tab-btn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:600}
+    .tab-btn.active{background:var(--brand);border-color:var(--brand);color:#fff}
+
+    section{display:none;border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:18px}
+    section.active{display:block}
+    section h2{margin:0 0 8px;font-size:1.1rem;letter-spacing:.3px;color:var(--brand)}
+    .item{padding:12px 10px;border-top:1px dashed var(--line)}
+    .item:first-of-type{border-top:none}
+    .when{color:var(--muted);font-size:.9rem}
+    .role{font-weight:700}
+    .list{margin:8px 0 0 18px}
+    .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+    .chip{font-size:.78rem;color:var(--muted);background:var(--chip);border:1px solid var(--line);padding:2px 8px;border-radius:999px}
+    .pub{margin:10px 0;padding:10px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+
+    .contact a{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:12px}
+    .contact{display:flex;flex-wrap:wrap;gap:10px}
+
+    footer{margin:26px auto 10px;text-align:center;color:var(--muted)}
+
+    @media (max-width: 900px){header{grid-template-columns:1fr;}}
+
+    @media print{
+      .tabs,.tab-btn{display:none!important}
+      section{display:block!important;break-inside:avoid}
+      a{color:#0645ad}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="logos">
+        <img src="Logo_Secihti_H.png" alt="Logo Secihti" />
+        <img src="logo_inaoe.png" alt="INAOE Logo" />
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <strong style="color:var(--brand)">CV en línea</strong>
+        <!-- Botón de descarga del PDF si está disponible -->
+        <a id="btn-cv" class="tab-btn" href="CV_Hugo_Barron_2025.pdf" target="_blank" rel="noopener" style="text-decoration:none">Descargar CV (PDF)</a>
+      </div>
+    </div>
+
+    <header>
+      <div class="avatar" aria-hidden="true">HB</div>
+      <div>
+        <h1>Dr. José Hugo Barrón Zambrano</h1>
+        <div class="subtitle">Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) · Coordinación de Electrónica · Grupo de Sistemas Digitales</div>
+        <div class="badges">
+          <span class="badge">Investigador Titular A</span>
+          <span class="badge">SNII Nivel I</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Secciones del CV">
+      <button class="tab-btn active" data-tab="inicio">Inicio</button>
+      <button class="tab-btn" data-tab="formacion">Formación</button>
+      <button class="tab-btn" data-tab="experiencia">Experiencia</button>
+      <button class="tab-btn" data-tab="proyectos">Proyectos</button>
+      <button class="tab-btn" data-tab="publicaciones">Publicaciones</button>
+      <button class="tab-btn" data-tab="tesis">Tesis dirigidas</button>
+      <button class="tab-btn" data-tab="distinciones">Distinciones</button>
+      <button class="tab-btn" data-tab="contacto">Contacto</button>
+    </nav>
+
+    <section id="inicio" class="active" role="tabpanel">
+      <h2>Resumen</h2>
+      <p>El Dr. José Hugo Barrón Zambrano es un investigador activo y profesor destacado en el ámbito de la ingeniería, la computación y la electrónica. Actualmente trabaja como Investigador Titular A en el Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) y es nivel 1 en el SNII. Su experiencia académica incluye un Doctorado en Ciencias en Ciencias Computacionales, obtenido en 2014 en el Centro de Investigación y de Estudios Avanzados del Instituto Politécnico Nacional (CINVESTAV) unidad Tamaulipas, y una Maestría en Ciencias en Ciencias Computacionales del INAOE, obtenida en 2008.</p>
+      <h2>Líneas de investigación</h2>
+      <div class="chips">
+        <span class="chip">Circuitos Neuromórficos</span>
+        <span class="chip">Cómputo Reconfigurable</span>
+        <span class="chip">Visión por Computadora</span>
+        <span class="chip">Aplicaciones de IA</span>
+      </div>
+    </section>
+
+    <section id="formacion" role="tabpanel">
+      <h2>Formación Académica</h2>
+      <div class="item">
+        <div class="when">2014</div>
+        <div class="role">Doctorado en Computación</div>
+        <div>CINVESTAV‑IPN (Unidad Tamaulipas). Tesis: <em>CPG‑based Control for Adaptive Legged Robot Locomotion Using Visual Information: a Hardware Implementation Approach</em>.</div>
+      </div>
+      <div class="item">
+        <div class="when">2008</div>
+        <div class="role">Maestría en Ciencias</div>
+        <div>INAOE. Tesis: <em>Procesador paralelo para la recuperación 3D a partir del flujo óptico</em>.</div>
+      </div>
+      <div class="item">
+        <div class="when">2006</div>
+        <div class="role">Ingeniero en Comunicaciones y Electrónica</div>
+        <div>Universidad de Guanajuato – FIMEE. Tesis: <em>Interfaz Spartan‑3 con cámara digital OV7648</em>.</div>
+      </div>
+    </section>
+
+    <section id="experiencia" role="tabpanel">
+      <h2>Experiencia Profesional y Docente</h2>
+      <div class="item">
+        <div class="when">2015–2023</div>
+        <div class="role">Profesor de Tiempo Completo</div>
+        <div>Universidad Autónoma de Tamaulipas · Departamento de Ingeniería en Telemática.</div>
+      </div>
+      <div class="item">
+        <div class="when">2014–2015</div>
+        <div class="role">Profesor Investigador</div>
+        <div>Universidad Politécnica de Victoria · Ingeniería en Mecatrónica.</div>
+      </div>
+    </section>
+
+    <section id="proyectos" role="tabpanel">
+      <h2>Proyectos de Investigación (selección)</h2>
+      <div class="item">
+        <div class="when">2023–2025</div>
+        <div class="role">Colaborador</div>
+        <div>Estudio e innovación de sistemas láser de fibra óptica mediante análisis de datos e IA para sensado óptico, comunicaciones ultrarrápidas y biofotónica. <em>Fronteras de la Ciencia, CONAHCYT</em>.</div>
+      </div>
+      <div class="item">
+        <div class="when">2022–2023</div>
+        <div class="role">Colaborador</div>
+        <div>Diseño e implementación de sistemas de monitoreo inteligente usando dispositivos optoelectrónicos para sistemas agropecuarios en Tamaulipas. <em>Estancia Posdoctoral Académica CONAHCYT</em>.</div>
+      </div>
+      <div class="item">
+        <div class="when">2019–2020</div>
+        <div class="role">Colaborador</div>
+        <div>Identificación del Huanglongbing (HLB) a través de fotografía aérea multiespectral. <em>PRODEP</em>.</div>
+      </div>
+      <div class="item">
+        <div class="when">2017–2018</div>
+        <div class="role">Responsable técnico</div>
+        <div>Plataforma HW‑SW para control de locomoción en tiempo real de un robot con articulaciones usando principios biológicos. <em>Fortalecimiento a Cuerpos Académicos 2017 – PRODEP</em>.</div>
+      </div>
+      <div class="item">
+        <div class="when">2017–2019</div>
+        <div class="role">Colaborador</div>
+        <div>Neurociencia Computacional: de la teoría al desarrollo de sistemas neuromórficos. <em>Fronteras de la Ciencia, CONACyT</em>.</div>
+      </div>
+      <div class="item">
+        <div class="when">2016–2017</div>
+        <div class="role">Responsable técnico</div>
+        <div>Esquemas de control de locomoción para ambientes no estructurados usando principios biológicos. <em>PRODEP</em>.</div>
+      </div>
+      <div class="item">
+        <div class="when">2014–2017</div>
+        <div class="role">Colaborador</div>
+        <div>Sistemas cognitivos neuromórficos en un chip: implementación de principios de percepción‑locomoción. <em>Fondo Sectorial SEP‑CONACYT</em>.</div>
+      </div>
+    </section>
+
+    <section id="publicaciones" role="tabpanel">
+      <h2>Publicaciones recientes (selección)</h2>
+      <div class="pub"><strong>2025</strong> · Pyramidal Rat Neurons Segmentation in Microscopy Low‑Resolution Image. <em>Computación y Sistemas</em>, 29(1), 53–63.</div>
+      <div class="pub"><strong>2025</strong> · Chapter 2: Low‑Cost Versatile Remote Healthcare Monitoring of Bedridden Patient. En <em>Smart Devices for Medical 4.0 Technologies</em>. CRC Press.</div>
+      <div class="pub"><strong>2024</strong> · Estimation of macro and micronutrient concentrations in ‘valencia’ orange leaves… <em>International Journal of Remote Sensing</em>.</div>
+      <div class="pub"><strong>2024</strong> · Review of fault detection techniques in power converters… <em>Measurement</em>.</div>
+      <div class="pub"><strong>2023</strong> · Multivariable Analysis of Nonlinear Optical Loop Mirror. <em>Photonics</em>.</div>
+      <div class="pub"><strong>2023</strong> · Non‑Invasive Optoelectronic System for Color‑Change Detection in Oranges. <em>IEEE Photonics Journal</em>.</div>
+      <div class="pub"><strong>2023</strong> · Real‑Time Embedded Vision System for Monitoring and Sorting of Citrus Fruits. <em>Electronics</em> (MDPI).</div>
+      <div class="pub"><strong>2022</strong> · EEG Feature Extraction Using Evolutionary Algorithms for Brain‑Computer Interface Development. <em>Computational Intelligence and Neuroscience</em>.</div>
+      <div class="pub"><strong>2022</strong> · Implementation and integration of image processing blocks in a real‑time bottle classification system. <em>Scientific Reports</em> (Nature Research).</div>
+    </section>
+
+    <section id="tesis" role="tabpanel">
+      <h2>Tesis dirigidas</h2>
+      <h3>Doctorado</h3>
+      <ul class="list">
+        <li>"Predicción y mapeo de macro y micronutrientes foliares y rendimiento de naranja utilizando sensor multiespectral", <em>Pedro Paulo Gomes De Oliveira</em>, Doctorado en Ciencias Sistemas Agropecuarios y Medio Ambiente, presentada el 12/11/2023, Codirector.</li>
+        <li>"Implementación de un controlador de navegación híbrido para un robot móvil", <em>Jesús Alejandro Paz Villafaña</em>, Doctor en Sistemas Computacionales, presentada el 12/12/2022, Director.</li>
+        <li>"Estudio de efectos caóticos presentes en fibras ópticas aplicado a un láser de figura ocho para el análisis de la señal de salida", <em>José Ramón Martínez Angulo</em>, Doctor en Ingeniería Eléctrica, presentada el 26/11/2020, Director.</li>
+      </ul>
+      <h3>Maestría</h3>
+      <ul class="list">
+        <li>"Extracción de características de EEG utilizando técnicas de inteligencia computacional para el desarrollo de interfaces cerebro-máquina", <em>César Alfredo Rocha Herrera</em>, Maestría en Ciencias e Ingeniería de Datos, presenta el 07/12/2021, Asesor.</li>
+        <li>"Emparejamiento de imágenes utilizando técnicas de computación evolutiva", <em>Carrizales Avalos Pedro Ernesto</em>, Maestría en Ciencias e Ingeniería de Datos, presentada el 31/01/2020, Asesor.</li>
+        <li>"Diseño de una interfaz cerebro-máquina para aplicaciones en computación", <em>Jorge Antonio Martínez Ledezma</em>, Maestría en Ciencias e Ingeniería de Datos, presenta el 11/12/2019, Director.</li>
+      </ul>
+    </section>
+
+    <section id="distinciones" role="tabpanel">
+      <h2>Derechos de Autor (Software)</h2>
+      <ul class="list">
+        <li><strong>2023</strong> · Aplicación móvil para monitoreo de ingesta en rumiantes.</li>
+        <li><strong>2022</strong> · Aplicación móvil para balanceo de raciones en rumiantes.</li>
+        <li><strong>2021</strong> · Aplicación para gestión colaborativa de información del Consejo de Cuenca del Río Bravo.</li>
+      </ul>
+      <h2>Estancias de Investigación Internacional</h2>
+      <ul class="list">
+        <li><strong>2018</strong> · Advanced Telecommunications Research Institute, Hiroshi Ishiguro Laboratories – Kyoto, Japón.</li>
+        <li><strong>2016</strong> · Lorraine Research Laboratory in Computer Science and its Applications – Nancy, Francia.</li>
+      </ul>
+      <h2>Premios y Distinciones</h2>
+      <ul class="list">
+        <li><strong>2023</strong> · 1er lugar LARC SEK – Torneo Mexicano de Robótica (FEMEX‑Robótica).</li>
+        <li><strong>2023</strong> · 3er lugar Rescate – Torneo Mexicano de Robótica.</li>
+        <li><strong>2022</strong> · 2º lugar IEEE Latin American Robotics Competition – SEK.</li>
+        <li><strong>2022</strong> · 1er lugar LARC SEK – Torneo Mexicano de Robótica.</li>
+      </ul>
+    </section>
+
+    <section id="contacto" role="tabpanel">
+      <h2>Contacto</h2>
+      <div class="contact">
+        <a href="mailto:jhbarron@inaoep.mx">✉️ jhbarron@inaoep.mx</a>
+        <a href="https://www-elec.inaoep.mx/directorio-de-la-coordinacion/investigadores/jose-hugo-barron-zambrano" target="_blank" rel="noopener">🔗 Perfil INAOE</a>
+        <a href="tel:+522222663100">📞 (222) 266 31 00 ext. 8226</a>
+      </div>
+      <p class="when">Luis Enrique Erro #1, Tonantzintla, Puebla, México. C.P. 72840</p>
+    </section>
+
+    <footer>
+      © 2025 · CV en línea · Última actualización: octubre 2025
+    </footer>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('section[role="tabpanel"]');
+    function activate(tab){
+      buttons.forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
+      panels.forEach(p=>p.classList.toggle('active', p.id===tab));
+    }
+    buttons.forEach(btn=>btn.addEventListener('click', ()=>activate(btn.dataset.tab)));
+  </script>
+</body>
+</html>
