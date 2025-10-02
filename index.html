@@ -21,7 +21,13 @@
     .wrap{max-width:1200px;margin:0 auto;padding:28px}
 
     .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;border-bottom:2px solid var(--brand);padding-bottom:10px}
-    .logos{display:flex;gap:20px;align-items:center}
+    .logos {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center; /* centra horizontalmente */
+  flex-wrap: wrap; /* permite que los logos salten de línea si no caben */
+}
     .logos img{height:60px;width:auto;object-fit:contain}
 
     header{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin-bottom:16px}
