@@ -3,38 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dr. José Hugo Barrón Zambrano – CV</title>
+  <title data-i18n="title">Dr. José Hugo Barrón Zambrano – CV</title>
   <meta name="description" content="Currículum en línea del Dr. José Hugo Barrón Zambrano – INAOE" />
   <style>
-    :root{
-      --bg:#ffffff; --ink:#1b1b1b; --muted:#5a5a5a;
-      --brand:#800020; --line:#e9e9ef; --chip:#f5f5f8;
-    }
+    :root{ --bg:#ffffff; --ink:#1b1b1b; --muted:#5a5a5a; --brand:#800020; --line:#e9e9ef; --chip:#f5f5f8; }
     *{box-sizing:border-box}
-    html,body{
-      margin:0;padding:0;background:var(--bg);color:var(--ink);
-      font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial
-    }
+    html,body{ margin:0;padding:0;background:var(--bg);color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial }
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:1200px;margin:0 auto;padding:28px}
 
-    /* Topbar */
-    .topbar{
-      display:flex;align-items:center;justify-content:space-between;
-      margin-bottom:16px;border-bottom:2px solid var(--brand);padding-bottom:10px;gap:12px
-    }
-    .logos{
-      display:flex;gap:20px;align-items:center;justify-content:center;flex-wrap:wrap
-    }
+    .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;border-bottom:2px solid var(--brand);padding-bottom:10px;gap:12px}
+    .logos{display:flex;gap:20px;align-items:center;justify-content:center;flex-wrap:wrap}
     .logos img{height:60px;width:auto;object-fit:contain}
 
-    /* Header */
     header{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin-bottom:16px}
-    .avatar{
-      width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid var(--brand);
-      display:flex;align-items:center;justify-content:center
-    }
+    .avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid var(--brand);display:flex;align-items:center;justify-content:center}
     .avatar img{width:100%;height:100%;object-fit:cover}
 
     h1{margin:0 0 2px 0;font-size:2rem}
@@ -42,25 +26,17 @@
     .badges{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
     .badge{background:var(--chip);border:1px solid var(--line);padding:4px 10px;border-radius:999px;color:var(--muted);font-size:.85rem}
 
-    /* Tabs + Hamburger */
     .tabs-wrap{margin:14px 0}
     .hamburger{
-      display:none; /* visible solo en móvil */
-      width:100%; border:1px solid var(--line); background:#fff; color:var(--ink);
-      padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:700;
-      display:flex; align-items:center; justify-content:center; gap:8px;
+      display:none;width:100%;border:1px solid var(--line);background:#fff;color:var(--ink);
+      padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700;
+      display:flex;align-items:center;justify-content:center;gap:8px;
     }
     .hamburger:focus{outline:2px solid var(--brand)}
-    .tabs{
-      display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px;
-    }
-    .tab-btn{
-      appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);
-      padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:600
-    }
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+    .tab-btn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:600}
     .tab-btn.active{background:var(--brand);border-color:var(--brand);color:#fff}
 
-    /* Panels */
     section{display:none;border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:18px}
     section.active{display:block}
     section h2{margin:0 0 8px;font-size:1.1rem;letter-spacing:.3px;color:var(--brand)}
@@ -75,10 +51,11 @@
 
     .contact a{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:12px}
     .contact{display:flex;flex-wrap:wrap;gap:10px}
-
     footer{margin:26px auto 10px;text-align:center;color:var(--muted)}
 
-    /* --- Responsivo --- */
+    .lang-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 12px;border-radius:12px;cursor:pointer;font-weight:700}
+    .lang-toggle.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+
     @media (max-width: 900px){
       .wrap{padding:22px}
       .topbar{flex-direction:column;align-items:center;justify-content:center;text-align:center}
@@ -91,18 +68,16 @@
       .wrap{padding:16px}
       .logos{gap:12px}
       .logos img{height:40px}
-      /* Menú hamburguesa visible; las pestañas se colapsan */
       .hamburger{display:flex}
-      .tabs{display:none}              /* escondidas por defecto en móvil */
-      .tabs.open{display:flex}         /* visibles al abrir menú */
-      .tabs .tab-btn{width:100%}       /* cada pestaña a ancho completo */
+      .tabs{display:none}
+      .tabs.open{display:flex}
+      .tabs .tab-btn{width:100%}
       section{padding:14px}
       h1{font-size:1.6rem}
     }
 
-    /* Print */
     @media print{
-      .tabs,.tab-btn,.hamburger{display:none!important}
+      .tabs,.tab-btn,.hamburger,.lang-toggle{display:none!important}
       section{display:block!important;break-inside:avoid}
       a{color:#0645ad}
     }
@@ -117,8 +92,9 @@
         <img src="DSG_logo_v1.png" alt="Digital Systems Group Logo" />
       </div>
       <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center">
-        <strong style="color:var(--brand)">CV en línea</strong>
-        <a id="btn-cv" class="tab-btn" href="CV_Hugo_Barron_2025.pdf" target="_blank" rel="noopener" style="text-decoration:none">Descargar CV (PDF)</a>
+        <strong style="color:var(--brand)" data-i18n="cv_online">CV en línea</strong>
+        <a id="btn-cv" class="tab-btn" href="CV_Hugo_Barron_2025.pdf" target="_blank" rel="noopener" style="text-decoration:none" data-i18n="download_cv">Descargar CV (PDF)</a>
+        <button id="lang-toggle" class="lang-toggle" aria-pressed="false" aria-label="Cambiar idioma a inglés">EN</button>
       </div>
     </div>
 
@@ -127,154 +103,358 @@
         <img src="hugo_Inaoe.jpg" alt="Foto de José Hugo Barrón Zambrano">
       </div>
       <div>
-        <h1>Dr. José Hugo Barrón Zambrano</h1>
-        <div class="subtitle">Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) · Coordinación de Electrónica · Grupo de Sistemas Digitales</div>
+        <h1 data-i18n="name">Dr. José Hugo Barrón Zambrano</h1>
+        <div class="subtitle" data-i18n="subtitle">Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) · Coordinación de Electrónica · Grupo de Sistemas Digitales</div>
         <div class="badges">
-          <span class="badge">Investigador Titular A</span>
-          <span class="badge">SNII Nivel I</span>
+          <span class="badge" data-i18n="badge_title">Investigador Titular A</span>
+          <span class="badge" data-i18n="badge_snii">SNII Nivel I</span>
         </div>
       </div>
     </header>
 
-    <!-- Menú de pestañas con hamburguesa -->
     <div class="tabs-wrap" aria-label="Navegación de secciones">
-      <button class="hamburger" id="hamburger" aria-controls="tabs" aria-expanded="false" aria-label="Abrir menú">
-        ☰ Menú
-      </button>
+      <button class="hamburger" id="hamburger" aria-controls="tabs" aria-expanded="false" aria-label="Abrir menú">☰ <span data-i18n="menu">Menú</span></button>
       <nav class="tabs" id="tabs">
-        <button class="tab-btn active" data-tab="inicio">Inicio</button>
-        <button class="tab-btn" data-tab="formacion">Formación</button>
-        <button class="tab-btn" data-tab="experiencia">Experiencia</button>
-        <button class="tab-btn" data-tab="proyectos">Proyectos</button>
-        <button class="tab-btn" data-tab="publicaciones">Publicaciones</button>
-        <button class="tab-btn" data-tab="tesis">Tesis dirigidas</button>
-        <button class="tab-btn" data-tab="distinciones">Distinciones</button>
-        <button class="tab-btn" data-tab="contacto">Contacto</button>
+        <button class="tab-btn active" data-tab="inicio" data-i18n="tab_home">Inicio</button>
+        <button class="tab-btn" data-tab="formacion" data-i18n="tab_education">Formación</button>
+        <button class="tab-btn" data-tab="experiencia" data-i18n="tab_experience">Experiencia</button>
+        <button class="tab-btn" data-tab="proyectos" data-i18n="tab_projects">Proyectos</button>
+        <button class="tab-btn" data-tab="publicaciones" data-i18n="tab_publications">Publicaciones</button>
+        <button class="tab-btn" data-tab="tesis" data-i18n="tab_thesis">Tesis dirigidas</button>
+        <button class="tab-btn" data-tab="distinciones" data-i18n="tab_awards">Distinciones</button>
+        <button class="tab-btn" data-tab="contacto" data-i18n="tab_contact">Contacto</button>
       </nav>
     </div>
 
-    <!-- PANELES -->
+    <!-- INICIO -->
     <section id="inicio" class="active" role="tabpanel">
-      <h2>Resumen</h2>
-      <p>El Dr. José Hugo Barrón Zambrano es un investigador activo y profesor destacado en el ámbito de la ingeniería, la computación y la electrónica. Actualmente trabaja como Investigador Titular A en el Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) y es nivel 1 en el SNII. Su experiencia académica incluye un Doctorado en Ciencias en Ciencias Computacionales, obtenido en 2014 en el Centro de Investigación y de Estudios Avanzados del Instituto Politécnico Nacional (CINVESTAV) unidad Tamaulipas, y una Maestría en Ciencias en Ciencias Computacionales del INAOE, obtenida en 2008.</p>
-      <h2>Líneas de investigación</h2>
+      <h2 data-i18n="summary">Resumen</h2>
+      <p data-i18n="about">
+        El Dr. José Hugo Barrón Zambrano es un investigador activo y profesor destacado en el ámbito de la ingeniería, la computación y la electrónica. Actualmente trabaja como Investigador Titular A en el Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) y es nivel 1 en el SNII. Su experiencia académica incluye un Doctorado en Ciencias en Ciencias Computacionales, obtenido en 2014 en el Centro de Investigación y de Estudios Avanzados del Instituto Politécnico Nacional (CINVESTAV) unidad Tamaulipas, y una Maestría en Ciencias en Ciencias Computacionales del INAOE, obtenida en 2008.
+      </p>
+      <h2 data-i18n="research_lines">Líneas de investigación</h2>
       <div class="chips">
-        <span class="chip">Circuitos Neuromórficos</span>
-        <span class="chip">Cómputo Reconfigurable</span>
-        <span class="chip">Visión por Computadora</span>
-        <span class="chip">Aplicaciones de IA</span>
+        <span class="chip" data-i18n="chip_neuro">Circuitos Neuromórficos</span>
+        <span class="chip" data-i18n="chip_reconf">Cómputo Reconfigurable</span>
+        <span class="chip" data-i18n="chip_cv">Visión por Computadora</span>
+        <span class="chip" data-i18n="chip_ai">Aplicaciones de IA</span>
       </div>
     </section>
 
+    <!-- FORMACIÓN -->
     <section id="formacion" role="tabpanel">
-      <h2>Formación Académica</h2>
-      <div class="item"><div class="when">2014</div><div class="role">Doctorado en Computación</div>
-        <div>CINVESTAV-IPN (Unidad Tamaulipas). Tesis: <em>CPG-based Control for Adaptive Legged Robot Locomotion Using Visual Information: a Hardware Implementation Approach</em>.</div></div>
-      <div class="item"><div class="when">2008</div><div class="role">Maestría en Ciencias</div>
-        <div>INAOE. Tesis: <em>Procesador paralelo para la recuperación 3D a partir del flujo óptico</em>.</div></div>
-      <div class="item"><div class="when">2006</div><div class="role">Ingeniero en Comunicaciones y Electrónica</div>
-        <div>Universidad de Guanajuato – FIMEE. Tesis: <em>Interfaz Spartan-3 con cámara digital OV7648</em>.</div></div>
+      <h2 data-i18n="education">Formación Académica</h2>
+      <div class="item"><div class="when">2014</div><div class="role" data-i18n="edu1_role">Doctorado en Computación</div><div data-i18n="edu1_desc">CINVESTAV-IPN (Unidad Tamaulipas). Tesis: <em>CPG-based Control for Adaptive Legged Robot Locomotion Using Visual Information: a Hardware Implementation Approach</em>.</div></div>
+      <div class="item"><div class="when">2008</div><div class="role" data-i18n="edu2_role">Maestría en Ciencias</div><div data-i18n="edu2_desc">INAOE. Tesis: <em>Procesador paralelo para la recuperación 3D a partir del flujo óptico</em>.</div></div>
+      <div class="item"><div class="when">2006</div><div class="role" data-i18n="edu3_role">Ingeniero en Comunicaciones y Electrónica</div><div data-i18n="edu3_desc">Universidad de Guanajuato – FIMEE. Tesis: <em>Interfaz Spartan-3 con cámara digital OV7648</em>.</div></div>
     </section>
 
+    <!-- EXPERIENCIA -->
     <section id="experiencia" role="tabpanel">
-      <h2>Experiencia Profesional y Docente</h2>
-      <div class="item"><div class="when">2015–2023</div><div class="role">Profesor de Tiempo Completo</div>
-        <div>Universidad Autónoma de Tamaulipas · Departamento de Ingeniería en Telemática.</div></div>
-      <div class="item"><div class="when">2014–2015</div><div class="role">Profesor Investigador</div>
-        <div>Universidad Politécnica de Victoria · Ingeniería en Mecatrónica.</div></div>
+      <h2 data-i18n="experience">Experiencia Profesional y Docente</h2>
+      <div class="item"><div class="when">2015–2023</div><div class="role" data-i18n="exp1_role">Profesor de Tiempo Completo</div><div data-i18n="exp1_desc">Universidad Autónoma de Tamaulipas · Departamento de Ingeniería en Telemática.</div></div>
+      <div class="item"><div class="when">2014–2015</div><div class="role" data-i18n="exp2_role">Profesor Investigador</div><div data-i18n="exp2_desc">Universidad Politécnica de Victoria · Ingeniería en Mecatrónica.</div></div>
     </section>
 
+    <!-- PROYECTOS -->
     <section id="proyectos" role="tabpanel">
-      <h2>Proyectos de Investigación (selección)</h2>
-      <div class="item"><div class="when">2023–2025</div><div class="role">Colaborador</div>
-        <div>Estudio e innovación de sistemas láser de fibra óptica mediante análisis de datos e IA para sensado óptico, comunicaciones ultrarrápidas y biofotónica. <em>Fronteras de la Ciencia, CONAHCYT</em>.</div></div>
-      <div class="item"><div class="when">2022–2023</div><div class="role">Colaborador</div>
-        <div>Diseño e implementación de sistemas de monitoreo inteligente usando dispositivos optoelectrónicos para sistemas agropecuarios en Tamaulipas. <em>Estancia Posdoctoral Académica CONAHCYT</em>.</div></div>
-      <div class="item"><div class="when">2019–2020</div><div class="role">Colaborador</div>
-        <div>Identificación del Huanglongbing (HLB) a través de fotografía aérea multiespectral. <em>PRODEP</em>.</div></div>
-      <div class="item"><div class="when">2017–2018</div><div class="role">Responsable técnico</div>
-        <div>Plataforma HW-SW para control de locomoción en tiempo real de un robot con articulaciones usando principios biológicos. <em>Fortalecimiento a Cuerpos Académicos 2017 – PRODEP</em>.</div></div>
-      <div class="item"><div class="when">2017–2019</div><div class="role">Colaborador</div>
-        <div>Neurociencia Computacional: de la teoría al desarrollo de sistemas neuromórficos. <em>Fronteras de la Ciencia, CONACyT</em>.</div></div>
-      <div class="item"><div class="when">2016–2017</div><div class="role">Responsable técnico</div>
-        <div>Esquemas de control de locomoción para ambientes no estructurados usando principios biológicos. <em>PRODEP</em>.</div></div>
-      <div class="item"><div class="when">2014–2017</div><div class="role">Colaborador</div>
-        <div>Sistemas cognitivos neuromórficos en un chip: implementación de principios de percepción-locomoción. <em>Fondo Sectorial SEP-CONACYT</em>.</div></div>
+      <h2 data-i18n="projects">Proyectos de Investigación (selección)</h2>
+      <div class="item"><div class="when">2023–2025</div><div class="role" data-i18n="prj1_role">Colaborador</div><div data-i18n="prj1_desc">Estudio e innovación de sistemas láser de fibra óptica mediante análisis de datos e IA para sensado óptico, comunicaciones ultrarrápidas y biofotónica. <em>Fronteras de la Ciencia, CONAHCYT</em>.</div></div>
+      <div class="item"><div class="when">2022–2023</div><div class="role" data-i18n="prj2_role">Colaborador</div><div data-i18n="prj2_desc">Diseño e implementación de sistemas de monitoreo inteligente usando dispositivos optoelectrónicos para sistemas agropecuarios en Tamaulipas. <em>Estancia Posdoctoral Académica CONAHCYT</em>.</div></div>
+      <div class="item"><div class="when">2019–2020</div><div class="role" data-i18n="prj3_role">Colaborador</div><div data-i18n="prj3_desc">Identificación del Huanglongbing (HLB) a través de fotografía aérea multiespectral. <em>PRODEP</em>.</div></div>
+      <div class="item"><div class="when">2017–2018</div><div class="role" data-i18n="prj4_role">Responsable técnico</div><div data-i18n="prj4_desc">Plataforma HW-SW para control de locomoción en tiempo real de un robot con articulaciones usando principios biológicos. <em>Fortalecimiento a Cuerpos Académicos 2017 – PRODEP</em>.</div></div>
+      <div class="item"><div class="when">2017–2019</div><div class="role" data-i18n="prj5_role">Colaborador</div><div data-i18n="prj5_desc">Neurociencia Computacional: de la teoría al desarrollo de sistemas neuromórficos. <em>Fronteras de la Ciencia, CONACyT</em>.</div></div>
+      <div class="item"><div class="when">2016–2017</div><div class="role" data-i18n="prj6_role">Responsable técnico</div><div data-i18n="prj6_desc">Esquemas de control de locomoción para ambientes no estructurados usando principios biológicos. <em>PRODEP</em>.</div></div>
+      <div class="item"><div class="when">2014–2017</div><div class="role" data-i18n="prj7_role">Colaborador</div><div data-i18n="prj7_desc">Sistemas cognitivos neuromórficos en un chip: implementación de principios de percepción-locomoción. <em>Fondo Sectorial SEP-CONACYT</em>.</div></div>
     </section>
 
+    <!-- PUBLICACIONES -->
     <section id="publicaciones" role="tabpanel">
-      <h2>Publicaciones recientes (selección)</h2>
-      <div class="pub"><strong>2025</strong> · Pyramidal Rat Neurons Segmentation in Microscopy Low-Resolution Image. <em>Computación y Sistemas</em>, 29(1), 53–63.</div>
-      <div class="pub"><strong>2025</strong> · Chapter 2: Low-Cost Versatile Remote Healthcare Monitoring of Bedridden Patient. En <em>Smart Devices for Medical 4.0 Technologies</em>. CRC Press.</div>
-      <div class="pub"><strong>2024</strong> · Estimation of macro and micronutrient concentrations in ‘valencia’ orange leaves… <em>International Journal of Remote Sensing</em>.</div>
-      <div class="pub"><strong>2024</strong> · Review of fault detection techniques in power converters… <em>Measurement</em>.</div>
-      <div class="pub"><strong>2023</strong> · Multivariable Analysis of Nonlinear Optical Loop Mirror. <em>Photonics</em>.</div>
-      <div class="pub"><strong>2023</strong> · Non-Invasive Optoelectronic System for Color-Change Detection in Oranges. <em>IEEE Photonics Journal</em>.</div>
-      <div class="pub"><strong>2023</strong> · Real-Time Embedded Vision System for Monitoring and Sorting of Citrus Fruits. <em>Electronics</em> (MDPI).</div>
-      <div class="pub"><strong>2022</strong> · EEG Feature Extraction Using Evolutionary Algorithms for Brain-Computer Interface Development. <em>Computational Intelligence and Neuroscience</em>.</div>
-      <div class="pub"><strong>2022</strong> · Implementation and integration of image processing blocks in a real-time bottle classification system. <em>Scientific Reports</em> (Nature Research).</div>
+      <h2 data-i18n="publications">Publicaciones recientes (selección)</h2>
+      <div class="pub" data-i18n="pub1"><strong>2025</strong> · Pyramidal Rat Neurons Segmentation in Microscopy Low-Resolution Image. <em>Computación y Sistemas</em>, 29(1), 53–63.</div>
+      <div class="pub" data-i18n="pub2"><strong>2025</strong> · Chapter 2: Low-Cost Versatile Remote Healthcare Monitoring of Bedridden Patient. En <em>Smart Devices for Medical 4.0 Technologies</em>. CRC Press.</div>
+      <div class="pub" data-i18n="pub3"><strong>2024</strong> · Estimation of macro and micronutrient concentrations in ‘valencia’ orange leaves… <em>International Journal of Remote Sensing</em>.</div>
+      <div class="pub" data-i18n="pub4"><strong>2024</strong> · Review of fault detection techniques in power converters… <em>Measurement</em>.</div>
+      <div class="pub" data-i18n="pub5"><strong>2023</strong> · Multivariable Analysis of Nonlinear Optical Loop Mirror. <em>Photonics</em>.</div>
+      <div class="pub" data-i18n="pub6"><strong>2023</strong> · Non-Invasive Optoelectronic System for Color-Change Detection in Oranges. <em>IEEE Photonics Journal</em>.</div>
+      <div class="pub" data-i18n="pub7"><strong>2023</strong> · Real-Time Embedded Vision System for Monitoring and Sorting of Citrus Fruits. <em>Electronics</em> (MDPI).</div>
+      <div class="pub" data-i18n="pub8"><strong>2022</strong> · EEG Feature Extraction Using Evolutionary Algorithms for Brain-Computer Interface Development. <em>Computational Intelligence and Neuroscience</em>.</div>
+      <div class="pub" data-i18n="pub9"><strong>2022</strong> · Implementation and integration of image processing blocks in a real-time bottle classification system. <em>Scientific Reports</em> (Nature Research).</div>
     </section>
 
+    <!-- TESIS -->
     <section id="tesis" role="tabpanel">
-      <h2>Tesis dirigidas</h2>
-      <h3>Doctorado</h3>
+      <h2 data-i18n="thesis">Tesis dirigidas</h2>
+      <h3 data-i18n="phd">Doctorado</h3>
       <ul class="list">
-        <li>"Predicción y mapeo de macro y micronutrientes foliares y rendimiento de naranja utilizando sensor multiespectral", <em>Pedro Paulo Gomes De Oliveira</em>, Doctorado en Ciencias Sistemas Agropecuarios y Medio Ambiente, presentada el 12/11/2023, Codirector.</li>
-        <li>"Implementación de un controlador de navegación híbrido para un robot móvil", <em>Jesús Alejandro Paz Villafaña</em>, Doctor en Sistemas Computacionales, presentada el 12/12/2022, Director.</li>
-        <li>"Estudio de efectos caóticos presentes en fibras ópticas aplicado a un láser de figura ocho para el análisis de la señal de salida", <em>José Ramón Martínez Angulo</em>, Doctor en Ingeniería Eléctrica, presentada el 26/11/2020, Director.</li>
+        <li data-i18n="th_phd1">"Predicción y mapeo de macro y micronutrientes foliares y rendimiento de naranja utilizando sensor multiespectral", <em>Pedro Paulo Gomes De Oliveira</em>, Doctorado en Ciencias Sistemas Agropecuarios y Medio Ambiente, presentada el 12/11/2023, Codirector.</li>
+        <li data-i18n="th_phd2">"Implementación de un controlador de navegación híbrido para un robot móvil", <em>Jesús Alejandro Paz Villafaña</em>, Doctor en Sistemas Computacionales, presentada el 12/12/2022, Director.</li>
+        <li data-i18n="th_phd3">"Estudio de efectos caóticos presentes en fibras ópticas aplicado a un láser de figura ocho para el análisis de la señal de salida", <em>José Ramón Martínez Angulo</em>, Doctor en Ingeniería Eléctrica, presentada el 26/11/2020, Director.</li>
       </ul>
-      <h3>Maestría</h3>
+      <h3 data-i18n="msc">Maestría</h3>
       <ul class="list">
-        <li>"Extracción de características de EEG utilizando técnicas de inteligencia computacional para el desarrollo de interfaces cerebro-máquina", <em>César Alfredo Rocha Herrera</em>, Maestría en Ciencias e Ingeniería de Datos, presenta el 07/12/2021, Asesor.</li>
-        <li>"Emparejamiento de imágenes utilizando técnicas de computación evolutiva", <em>Carrizales Avalos Pedro Ernesto</em>, Maestría en Ciencias e Ingeniería de Datos, presentada el 31/01/2020, Asesor.</li>
-        <li>"Diseño de una interfaz cerebro-máquina para aplicaciones en computación", <em>Jorge Antonio Martínez Ledezma</em>, Maestría en Ciencias e Ingeniería de Datos, presenta el 11/12/2019, Director.</li>
+        <li data-i18n="th_msc1">"Extracción de características de EEG utilizando técnicas de inteligencia computacional para el desarrollo de interfaces cerebro-máquina", <em>César Alfredo Rocha Herrera</em>, Maestría en Ciencias e Ingeniería de Datos, presenta el 07/12/2021, Asesor.</li>
+        <li data-i18n="th_msc2">"Emparejamiento de imágenes utilizando técnicas de computación evolutiva", <em>Carrizales Avalos Pedro Ernesto</em>, Maestría en Ciencias e Ingeniería de Datos, presentada el 31/01/2020, Asesor.</li>
+        <li data-i18n="th_msc3">"Diseño de una interfaz cerebro-máquina para aplicaciones en computación", <em>Jorge Antonio Martínez Ledezma</em>, Maestría en Ciencias e Ingeniería de Datos, presenta el 11/12/2019, Director.</li>
       </ul>
     </section>
 
+    <!-- DISTINCIONES -->
     <section id="distinciones" role="tabpanel">
-      <h2>Derechos de Autor (Software)</h2>
+      <h2 data-i18n="awards">Premios y Distinciones</h2>
       <ul class="list">
-        <li><strong>2023</strong> · Aplicación móvil para monitoreo de ingesta en rumiantes.</li>
-        <li><strong>2022</strong> · Aplicación móvil para balanceo de raciones en rumiantes.</li>
-        <li><strong>2021</strong> · Aplicación para gestión colaborativa de información del Consejo de Cuenca del Río Bravo.</li>
+        <li data-i18n="aw1"><strong>2023</strong> · 1er lugar LARC SEK – Torneo Mexicano de Robótica (FEMEX-Robótica).</li>
+        <li data-i18n="aw2"><strong>2023</strong> · 3er lugar Rescate – Torneo Mexicano de Robótica.</li>
+        <li data-i18n="aw3"><strong>2022</strong> · 2º lugar IEEE Latin American Robotics Competition – SEK.</li>
+        <li data-i18n="aw4"><strong>2022</strong> · 1er lugar LARC SEK – Torneo Mexicano de Robótica.</li>
       </ul>
-      <h2>Estancias de Investigación Internacional</h2>
+      <h2 data-i18n="intl_stays">Estancias de Investigación Internacional</h2>
       <ul class="list">
-        <li><strong>2018</strong> · Advanced Telecommunications Research Institute, Hiroshi Ishiguro Laboratories – Kyoto, Japón.</li>
-        <li><strong>2016</strong> · Lorraine Research Laboratory in Computer Science and its Applications – Nancy, Francia.</li>
+        <li data-i18n="stay1"><strong>2018</strong> · Advanced Telecommunications Research Institute, Hiroshi Ishiguro Laboratories – Kyoto, Japón.</li>
+        <li data-i18n="stay2"><strong>2016</strong> · Lorraine Research Laboratory in Computer Science and its Applications – Nancy, Francia.</li>
       </ul>
-      <h2>Premios y Distinciones</h2>
+      <h2 data-i18n="software_ra">Derechos de Autor (Software)</h2>
       <ul class="list">
-        <li><strong>2023</strong> · 1er lugar LARC SEK – Torneo Mexicano de Robótica (FEMEX-Robótica).</li>
-        <li><strong>2023</strong> · 3er lugar Rescate – Torneo Mexicano de Robótica.</li>
-        <li><strong>2022</strong> · 2º lugar IEEE Latin American Robotics Competition – SEK.</li>
-        <li><strong>2022</strong> · 1er lugar LARC SEK – Torneo Mexicano de Robótica.</li>
+        <li data-i18n="ra1"><strong>2023</strong> · Aplicación móvil para monitoreo de ingesta en rumiantes.</li>
+        <li data-i18n="ra2"><strong>2022</strong> · Aplicación móvil para balanceo de raciones en rumiantes.</li>
+        <li data-i18n="ra3"><strong>2021</strong> · Aplicación para gestión colaborativa de información del Consejo de Cuenca del Río Bravo.</li>
       </ul>
     </section>
 
+    <!-- CONTACTO -->
     <section id="contacto" role="tabpanel">
-      <h2>Contacto</h2>
+      <h2 data-i18n="contact">Contacto</h2>
       <div class="contact">
         <a href="mailto:jhbarron@inaoep.mx">✉️ jhbarron@inaoep.mx</a>
-        <a href="https://www-elec.inaoep.mx/directorio-de-la-coordinacion/investigadores/jose-hugo-barron-zambrano" target="_blank" rel="noopener">🔗 Perfil INAOE</a>
+        <a href="https://www-elec.inaoep.mx/directorio-de-la-coordinacion/investigadores/jose-hugo-barron-zambrano" target="_blank" rel="noopener" data-i18n="inaoe_profile">🔗 Perfil INAOE</a>
         <a href="tel:+522222663100">📞 (222) 266 31 00 ext. 8226</a>
       </div>
       <p class="when">Luis Enrique Erro #1, Tonantzintla, Puebla, México. C.P. 72840</p>
     </section>
 
-    <footer>
-      © 2025 · CV en línea · Última actualización: octubre 2025
-    </footer>
+    <footer data-i18n="footer">© 2025 · CV en línea · Última actualización: octubre 2025</footer>
   </div>
 
   <script>
+    // DICCIONARIOS
+    const I18N = {
+      es: {
+        title: "Dr. José Hugo Barrón Zambrano – CV",
+        cv_online: "CV en línea",
+        download_cv: "Descargar CV (PDF)",
+        menu: "Menú",
+        name: "Dr. José Hugo Barrón Zambrano",
+        subtitle: "Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) · Coordinación de Electrónica · Grupo de Sistemas Digitales",
+        badge_title: "Investigador Titular A",
+        badge_snii: "SNII Nivel I",
+
+        tab_home: "Inicio",
+        tab_education: "Formación",
+        tab_experience: "Experiencia",
+        tab_projects: "Proyectos",
+        tab_publications: "Publicaciones",
+        tab_thesis: "Tesis dirigidas",
+        tab_awards: "Distinciones",
+        tab_contact: "Contacto",
+
+        summary: "Resumen",
+        about:
+          "El Dr. José Hugo Barrón Zambrano es un investigador activo y profesor destacado en el ámbito de la ingeniería, la computación y la electrónica. Actualmente trabaja como Investigador Titular A en el Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) y es nivel 1 en el SNII. Su experiencia académica incluye un Doctorado en Ciencias en Ciencias Computacionales, obtenido en 2014 en el Centro de Investigación y de Estudios Avanzados del Instituto Politécnico Nacional (CINVESTAV) unidad Tamaulipas, y una Maestría en Ciencias en Ciencias Computacionales del INAOE, obtenida en 2008.",
+        research_lines: "Líneas de investigación",
+        chip_neuro: "Circuitos Neuromórficos",
+        chip_reconf: "Cómputo Reconfigurable",
+        chip_cv: "Visión por Computadora",
+        chip_ai: "Aplicaciones de IA",
+
+        education: "Formación Académica",
+        edu1_role: "Doctorado en Computación",
+        edu1_desc: "CINVESTAV-IPN (Unidad Tamaulipas). Tesis: CPG-based Control for Adaptive Legged Robot Locomotion Using Visual Information: a Hardware Implementation Approach.",
+        edu2_role: "Maestría en Ciencias",
+        edu2_desc: "INAOE. Tesis: Procesador paralelo para la recuperación 3D a partir del flujo óptico.",
+        edu3_role: "Ingeniero en Comunicaciones y Electrónica",
+        edu3_desc: "Universidad de Guanajuato – FIMEE. Tesis: Interfaz Spartan-3 con cámara digital OV7648.",
+
+        experience: "Experiencia Profesional y Docente",
+        exp1_role: "Profesor de Tiempo Completo",
+        exp1_desc: "Universidad Autónoma de Tamaulipas · Departamento de Ingeniería en Telemática.",
+        exp2_role: "Profesor Investigador",
+        exp2_desc: "Universidad Politécnica de Victoria · Ingeniería en Mecatrónica.",
+
+        projects: "Proyectos de Investigación (selección)",
+        prj1_role: "Colaborador",
+        prj1_desc: "Estudio e innovación de sistemas láser de fibra óptica mediante análisis de datos e IA para sensado óptico, comunicaciones ultrarrápidas y biofotónica. Fronteras de la Ciencia, CONAHCYT.",
+        prj2_role: "Colaborador",
+        prj2_desc: "Diseño e implementación de sistemas de monitoreo inteligente usando dispositivos optoelectrónicos para sistemas agropecuarios en Tamaulipas. Estancia Posdoctoral Académica CONAHCYT.",
+        prj3_role: "Colaborador",
+        prj3_desc: "Identificación del Huanglongbing (HLB) a través de fotografía aérea multiespectral. PRODEP.",
+        prj4_role: "Responsable técnico",
+        prj4_desc: "Plataforma HW-SW para control de locomoción en tiempo real de un robot con articulaciones usando principios biológicos. Fortalecimiento a Cuerpos Académicos 2017 – PRODEP.",
+        prj5_role: "Colaborador",
+        prj5_desc: "Neurociencia Computacional: de la teoría al desarrollo de sistemas neuromórficos. Fronteras de la Ciencia, CONACyT.",
+        prj6_role: "Responsable técnico",
+        prj6_desc: "Esquemas de control de locomoción para ambientes no estructurados usando principios biológicos. PRODEP.",
+        prj7_role: "Colaborador",
+        prj7_desc: "Sistemas cognitivos neuromórficos en un chip: implementación de principios de percepción-locomoción. Fondo Sectorial SEP-CONACYT.",
+
+        publications: "Publicaciones recientes (selección)",
+        pub1: "2025 · Pyramidal Rat Neurons Segmentation in Microscopy Low-Resolution Image. Computación y Sistemas, 29(1), 53–63.",
+        pub2: "2025 · Chapter 2: Low-Cost Versatile Remote Healthcare Monitoring of Bedridden Patient. En Smart Devices for Medical 4.0 Technologies. CRC Press.",
+        pub3: "2024 · Estimation of macro and micronutrient concentrations in ‘valencia’ orange leaves… International Journal of Remote Sensing.",
+        pub4: "2024 · Review of fault detection techniques in power converters… Measurement.",
+        pub5: "2023 · Multivariable Analysis of Nonlinear Optical Loop Mirror. Photonics.",
+        pub6: "2023 · Non-Invasive Optoelectronic System for Color-Change Detection in Oranges. IEEE Photonics Journal.",
+        pub7: "2023 · Real-Time Embedded Vision System for Monitoring and Sorting of Citrus Fruits. Electronics (MDPI).",
+        pub8: "2022 · EEG Feature Extraction Using Evolutionary Algorithms for Brain-Computer Interface Development. Computational Intelligence and Neuroscience.",
+        pub9: "2022 · Implementation and integration of image processing blocks in a real-time bottle classification system. Scientific Reports (Nature Research).",
+
+        thesis: "Tesis dirigidas",
+        phd: "Doctorado",
+        msc: "Maestría",
+        th_phd1: "\"Predicción y mapeo de macro y micronutrientes foliares y rendimiento de naranja utilizando sensor multiespectral\", Pedro Paulo Gomes De Oliveira, Doctorado en Ciencias Sistemas Agropecuarios y Medio Ambiente, presentada el 12/11/2023, Codirector.",
+        th_phd2: "\"Implementación de un controlador de navegación híbrido para un robot móvil\", Jesús Alejandro Paz Villafaña, Doctor en Sistemas Computacionales, presentada el 12/12/2022, Director.",
+        th_phd3: "\"Estudio de efectos caóticos presentes en fibras ópticas aplicado a un láser de figura ocho para el análisis de la señal de salida\", José Ramón Martínez Angulo, Doctor en Ingeniería Eléctrica, presentada el 26/11/2020, Director.",
+        th_msc1: "\"Extracción de características de EEG utilizando técnicas de inteligencia computacional para el desarrollo de interfaces cerebro-máquina\", César Alfredo Rocha Herrera, Maestría en Ciencias e Ingeniería de Datos, presenta el 07/12/2021, Asesor.",
+        th_msc2: "\"Emparejamiento de imágenes utilizando técnicas de computación evolutiva\", Carrizales Avalos Pedro Ernesto, Maestría en Ciencias e Ingeniería de Datos, presentada el 31/01/2020, Asesor.",
+        th_msc3: "\"Diseño de una interfaz cerebro-máquina para aplicaciones en computación\", Jorge Antonio Martínez Ledezma, Maestría en Ciencias e Ingeniería de Datos, presenta el 11/12/2019, Director.",
+
+        awards: "Premios y Distinciones",
+        aw1: "2023 · 1er lugar LARC SEK – Torneo Mexicano de Robótica (FEMEX-Robótica).",
+        aw2: "2023 · 3er lugar Rescate – Torneo Mexicano de Robótica.",
+        aw3: "2022 · 2º lugar IEEE Latin American Robotics Competition – SEK.",
+        aw4: "2022 · 1er lugar LARC SEK – Torneo Mexicano de Robótica.",
+        intl_stays: "Estancias de Investigación Internacional",
+        stay1: "2018 · Advanced Telecommunications Research Institute, Hiroshi Ishiguro Laboratories – Kyoto, Japón.",
+        stay2: "2016 · Lorraine Research Laboratory in Computer Science and its Applications – Nancy, Francia.",
+        software_ra: "Derechos de Autor (Software)",
+        ra1: "2023 · Aplicación móvil para monitoreo de ingesta en rumiantes.",
+        ra2: "2022 · Aplicación móvil para balanceo de raciones en rumiantes.",
+        ra3: "2021 · Aplicación para gestión colaborativa de información del Consejo de Cuenca del Río Bravo.",
+
+        contact: "Contacto",
+        inaoe_profile: "🔗 Perfil INAOE",
+        footer: "© 2025 · CV en línea · Última actualización: octubre 2025"
+      },
+
+      en: {
+        title: "Dr. José Hugo Barrón Zambrano – CV",
+        cv_online: "Online CV",
+        download_cv: "Download CV (PDF)",
+        menu: "Menu",
+        name: "Dr. José Hugo Barrón Zambrano",
+        subtitle: "National Institute of Astrophysics, Optics and Electronics (INAOE) · Electronics Coordination · Digital Systems Group",
+        badge_title: "Tenure-Track Researcher (Titular A)",
+        badge_snii: "SNII Level I",
+
+        tab_home: "Home",
+        tab_education: "Education",
+        tab_experience: "Experience",
+        tab_projects: "Projects",
+        tab_publications: "Publications",
+        tab_thesis: "Supervised Theses",
+        tab_awards: "Awards",
+        tab_contact: "Contact",
+
+        summary: "Summary",
+        about:
+          "Dr. José Hugo Barrón Zambrano is an active researcher and professor in engineering, computing and electronics. He is currently a Tenure-Track Researcher (Titular A) at the National Institute of Astrophysics, Optics and Electronics (INAOE) and Level 1 in the SNII. His academic background includes a Ph.D. in Computer Science (2014) from CINVESTAV-IPN, Tamaulipas, and an M.Sc. in Computer Science (2008) from INAOE.",
+        research_lines: "Research lines",
+        chip_neuro: "Neuromorphic Circuits",
+        chip_reconf: "Reconfigurable Computing",
+        chip_cv: "Computer Vision",
+        chip_ai: "AI Applications",
+
+        education: "Academic Education",
+        edu1_role: "PhD in Computer Science",
+        edu1_desc: "CINVESTAV-IPN (Tamaulipas Unit). Thesis: CPG-based Control for Adaptive Legged Robot Locomotion Using Visual Information: a Hardware Implementation Approach.",
+        edu2_role: "M.Sc. in Science",
+        edu2_desc: "INAOE. Thesis: Parallel Processor for 3D Reconstruction from Optical Flow.",
+        edu3_role: "B.Eng. in Communications and Electronics",
+        edu3_desc: "University of Guanajuato – FIMEE. Thesis: Spartan-3 Interface with OV7648 Digital Camera.",
+
+        experience: "Professional & Teaching Experience",
+        exp1_role: "Full-time Professor",
+        exp1_desc: "Autonomous University of Tamaulipas · Department of Telematics Engineering.",
+        exp2_role: "Research Professor",
+        exp2_desc: "Polytechnic University of Victoria · Mechatronics Engineering.",
+
+        projects: "Research Projects (selected)",
+        prj1_role: "Collaborator",
+        prj1_desc: "Study and innovation of fiber laser systems using data analysis and AI for optical sensing, ultrafast communications and biophotonics. Fronteras de la Ciencia, CONAHCYT.",
+        prj2_role: "Collaborator",
+        prj2_desc: "Design and implementation of smart monitoring systems using optoelectronic devices for agricultural systems in Tamaulipas. CONAHCYT Academic Postdoctoral Stay.",
+        prj3_role: "Collaborator",
+        prj3_desc: "Identification of Huanglongbing (HLB) through multispectral aerial photography. PRODEP.",
+        prj4_role: "Technical Lead",
+        prj4_desc: "HW-SW platform for real-time locomotion control of an articulated robot using biological principles. Academic Bodies Strengthening 2017 – PRODEP.",
+        prj5_role: "Collaborator",
+        prj5_desc: "Computational Neuroscience: from theory to neuromorphic systems development. Fronteras de la Ciencia, CONACyT.",
+        prj6_role: "Technical Lead",
+        prj6_desc: "Locomotion control schemes for unstructured environments using biological principles. PRODEP.",
+        prj7_role: "Collaborator",
+        prj7_desc: "Neuromorphic cognitive systems on a chip: implementation of perception–locomotion principles. SEP-CONACYT Sector Fund.",
+
+        publications: "Recent Publications (selected)",
+        pub1: "2025 · Pyramidal Rat Neurons Segmentation in Microscopy Low-Resolution Image. Computación y Sistemas, 29(1), 53–63.",
+        pub2: "2025 · Chapter 2: Low-Cost Versatile Remote Healthcare Monitoring of Bedridden Patient. In Smart Devices for Medical 4.0 Technologies. CRC Press.",
+        pub3: "2024 · Estimation of macro and micronutrient concentrations in ‘valencia’ orange leaves… International Journal of Remote Sensing.",
+        pub4: "2024 · Review of fault detection techniques in power converters… Measurement.",
+        pub5: "2023 · Multivariable Analysis of Nonlinear Optical Loop Mirror. Photonics.",
+        pub6: "2023 · Non-Invasive Optoelectronic System for Color-Change Detection in Oranges. IEEE Photonics Journal.",
+        pub7: "2023 · Real-Time Embedded Vision System for Monitoring and Sorting of Citrus Fruits. Electronics (MDPI).",
+        pub8: "2022 · EEG Feature Extraction Using Evolutionary Algorithms for Brain-Computer Interface Development. Computational Intelligence and Neuroscience.",
+        pub9: "2022 · Implementation and integration of image processing blocks in a real-time bottle classification system. Scientific Reports (Nature Research).",
+
+        thesis: "Supervised Theses",
+        phd: "Doctorate",
+        msc: "Master’s",
+        th_phd1: "\"Prediction and mapping of foliar macro- and micronutrients and orange yield using a multispectral sensor\", Pedro Paulo Gomes De Oliveira, Ph.D. in Agricultural Systems and Environment, defended 2023-11-12, Co-advisor.",
+        th_phd2: "\"Implementation of a hybrid navigation controller for a mobile robot\", Jesús Alejandro Paz Villafaña, Ph.D. in Computer Systems, defended 2022-12-12, Advisor.",
+        th_phd3: "\"Study of chaotic effects in optical fibers applied to a figure-eight laser for output signal analysis\", José Ramón Martínez Angulo, Ph.D. in Electrical Engineering, defended 2020-11-26, Advisor.",
+        th_msc1: "\"EEG feature extraction using computational intelligence techniques for brain–computer interface development\", César Alfredo Rocha Herrera, M.Sc. in Data Science & Engineering, presented 2021-12-07, Advisor.",
+        th_msc2: "\"Image matching using evolutionary computation techniques\", Carrizales Avalos Pedro Ernesto, M.Sc. in Data Science & Engineering, defended 2020-01-31, Advisor.",
+        th_msc3: "\"Design of a brain–computer interface for computing applications\", Jorge Antonio Martínez Ledezma, M.Sc. in Data Science & Engineering, presented 2019-12-11, Advisor.",
+
+        awards: "Awards & Distinctions",
+        aw1: "2023 · 1st place LARC SEK – Mexican Robotics Tournament (FEMEX-Robótica).",
+        aw2: "2023 · 3rd place Rescue – Mexican Robotics Tournament.",
+        aw3: "2022 · 2nd place IEEE Latin American Robotics Competition – SEK.",
+        aw4: "2022 · 1st place LARC SEK – Mexican Robotics Tournament.",
+        intl_stays: "International Research Stays",
+        stay1: "2018 · Advanced Telecommunications Research Institute, Hiroshi Ishiguro Laboratories – Kyoto, Japan.",
+        stay2: "2016 · Lorraine Research Laboratory in Computer Science and its Applications – Nancy, France.",
+        software_ra: "Copyright (Software)",
+        ra1: "2023 · Mobile app for monitoring intake in ruminants.",
+        ra2: "2022 · Mobile app for ration balancing in ruminants.",
+        ra3: "2021 · App for collaborative information management of the Rio Bravo Basin Council.",
+
+        contact: "Contact",
+        inaoe_profile: "🔗 INAOE Profile",
+        footer: "© 2025 · Online CV · Last update: October 2025"
+      }
+    };
+
+    function applyLang(lang){
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        const txt = I18N[lang][key];
+        if (typeof txt === "string") el.textContent = txt;
+      });
+      const btn = document.getElementById("lang-toggle");
+      btn.classList.toggle("active", lang === "en");
+      btn.setAttribute("aria-pressed", String(lang === "en"));
+      btn.textContent = lang === "en" ? "ES" : "EN";
+      btn.setAttribute("aria-label", lang === "en" ? "Switch to Spanish" : "Cambiar idioma a inglés");
+      // actualiza también el <title> y meta description si lo deseas:
+      document.title = I18N[lang].title;
+    }
+
     // Tabs
     const buttons = document.querySelectorAll('.tab-btn');
     const panels = document.querySelectorAll('section[role="tabpanel"]');
     function activate(tab){
       buttons.forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
       panels.forEach(p=>p.classList.toggle('active', p.id===tab));
-      // En móvil: cerrar menú tras elegir
       const tabsEl = document.getElementById('tabs');
       const burger = document.getElementById('hamburger');
       if (tabsEl.classList.contains('open')) {
@@ -291,6 +471,17 @@
       const isOpen = tabs.classList.toggle('open');
       burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+
+    // Toggle idioma
+    const langBtn = document.getElementById("lang-toggle");
+    langBtn.addEventListener("click", ()=>{
+      const current = document.documentElement.lang || "es";
+      applyLang(current === "es" ? "en" : "es");
+    });
+
+    // Idioma inicial según navegador (opcional)
+    const prefersEnglish = navigator.language && navigator.language.startsWith("en");
+    if (prefersEnglish) applyLang("en");
   </script>
 </body>
 </html>
